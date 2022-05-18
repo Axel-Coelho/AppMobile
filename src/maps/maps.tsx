@@ -1,18 +1,13 @@
 import MapView, { Marker } from "react-native-maps";
-
 import { StyleSheet, Dimensions, View, Text } from "react-native";
-
-import axios from "axios";
+import { useContext } from "react";
+import { PlacesContext } from "../context/places.context";
 
 export default function Map() {
     const deja = "red";
 
     const pas = "#0362fc";
-
-    axios.get("https://digitalcampus.nerdy-bear.com/api/places")
-    .then(function (response) {
-      console.log('map : ', response)
-    })
+    const {places, setPlaces} = useContext(PlacesContext);
 
     return (
 
@@ -27,9 +22,10 @@ export default function Map() {
           longitudeDelta: 1.0,
 
         }}>
-
-          <Marker pinColor={deja} coordinate={{latitude: 46.319982, longitude: 4.831111}} title='Le S'/>
-
+            { places.map((place: any) => (
+                <Marker pinColor={deja} coordinate={{latitude: place.latitude, longitude: place.longitude}} title={place.title}/>
+            ))
+            }
         </MapView>
 
     );

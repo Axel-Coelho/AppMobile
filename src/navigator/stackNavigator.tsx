@@ -8,7 +8,7 @@ import { LoginContext } from "../context/login.context";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 export type AppNavigator = {
-    Home : undefined,
+    Map : undefined,
     Register: undefined,
     Login: undefined,
     Dashboard: undefined,
@@ -28,7 +28,7 @@ export default function StackNavigator() {
                   { login ? (
                     <Tab.Navigator>
                       <Stack.Screen name="List" component={PlacesComponent} />
-                      <Stack.Screen name="Home" component={HomeComponent} />
+                      <Stack.Screen name="Map" component={HomeComponent} />
                       </Tab.Navigator>
                   ) : (
                       

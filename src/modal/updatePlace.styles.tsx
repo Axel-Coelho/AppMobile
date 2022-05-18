@@ -8,6 +8,7 @@ export const modalStyle = StyleSheet.create({ centeredView: {
   },
   modalView: {
     margin: 20,
+    width: '100%',
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
@@ -40,6 +41,16 @@ export const modalStyle = StyleSheet.create({ centeredView: {
   modalText: {
     marginBottom: 15,
     textAlign: "center"
+  },
+  TextInput: {
+    width: '25%',
+    margin: 10
+  },
+  viewInput: {
+    flexDirection: "row",
+    justifyContent: 'space-evenly',
+  },
+  ViewUpdate : {
+    alignItems: 'center'
   }
-       
   });

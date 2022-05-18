@@ -22,7 +22,6 @@ export function LoginComponent({ navigation }:any) {
         .then(function (response) {
             // handle success
             // console.log("login response : " , response.data);
-            setLogin(true);
             const {data} = response;
             setUser({
                 id : data.user.id,
@@ -31,6 +30,8 @@ export function LoginComponent({ navigation }:any) {
                 password: data.user.password,
                 jwt: data.jwt
             })
+            setLogin(true);
+
             // alert(JSON.stringify(response.data));
         })
         .catch(function (error) {
